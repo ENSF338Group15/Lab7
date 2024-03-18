@@ -73,10 +73,7 @@ for t in range(1000):
 
     performance_records = []
     balances = []
-    start_time = time.perf_counter()
-    timeit.timeit(lambda: bst.search(t), globals=globals(), number=10000)
-    end_time = time.perf_counter()
-    search_time = end_time - start_time  # Time taken for each search
+    search_time = timeit.timeit(lambda: bst.search(t), globals=globals(), number=10000)
     performance_records.append(search_time)  # Simplified measure of performance
     balances.append(balance_factors(bst))
 
